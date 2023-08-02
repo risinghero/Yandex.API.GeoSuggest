@@ -35,8 +35,10 @@ namespace Yandex.API
         public async Task<GeoSuggestResponse> GeoSuggest(GeoSuggestRequest request,
             CancellationToken cancellationToken = default)
         {
-            var collection = HttpUtility.ParseQueryString("");
-            collection["apikey"] = apiKey;
+            var collection = new System.Collections.Specialized.NameValueCollection
+            {
+                ["apikey"] = apiKey
+            };
             request.Fill(collection);
             var isFirst = true;
             var resultUrl = "https://suggest-maps.yandex.ru/v1/suggest?";
