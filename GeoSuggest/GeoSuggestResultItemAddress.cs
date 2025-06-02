@@ -17,6 +17,6 @@ namespace Yandex.API
     {
         public string Name { get; set; }
 
-        public string Kind { get; set; }
+        public string[] Kind { get; set; }
     }
 }
